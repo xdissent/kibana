@@ -13,9 +13,9 @@
       window.KIBANA_COMMIT_SHA='@@commitSha';
     </script>
 
-    <link rel="stylesheet" href="/styles/main.css?_b=@@buildNum">
-    <script src="/bower_components/requirejs/require.js?_b=@@buildNum"></script>
-    <script src="/require.config.js?_b=@@buildNum"></script>
+    <link rel="stylesheet" href="styles/main.css?_b=@@buildNum">
+    <script src="bower_components/requirejs/require.js?_b=@@buildNum"></script>
+    <script src="require.config.js?_b=@@buildNum"></script>
     <script>
       if (window.KIBANA_BUILD_NUM.substr(0, 2) !== '@@') {
         // only cache bust if this is really the build number
