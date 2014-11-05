@@ -3,6 +3,7 @@ require "optparse"
 require 'rubygems'
 require 'puma/cli'
 require "yaml"
+require "erb"
 
 HERE = File.expand_path(File.dirname(__FILE__))
 
@@ -55,7 +56,8 @@ parser.banner = "Usage: kibana <options>\n\n"
 parser.parse! ARGV
 
 # Load the config from default
-config = YAML.load(IO.read(options[:config]))
+template = ERB.new IO.read(options[:config])
+config = YAML.load template.result(binding)
 
 # Set the override for the port
 port = (options[:port] || config['port'])
