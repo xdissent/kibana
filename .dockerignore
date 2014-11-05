@@ -1,0 +1,4 @@
+node_modules
+src/kibana/bower_components
+build
+.jruby
